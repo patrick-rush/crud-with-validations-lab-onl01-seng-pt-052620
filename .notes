@@ -1,0 +1,17 @@
+rails g migration add_published_status_to_posts published_status:string --no-test-framework
+
+
+$ rails generate migration CreateProducts name:string part_number:string
+
+rails g migration CreateSongs title:string released:boolean release_year:integer artist_name:string genre:string 
+
+
+class Order < ApplicationRecord
+  validates :card_number, presence: true, if: :paid_with_card?
+ 
+  def paid_with_card?
+    payment_type == "card"
+  end
+end
+
+validates :title, uniqueness: { scope: :release_year }
